@@ -12,6 +12,7 @@ var (
 	cfg           = flag.NewFlagSetWithEnvPrefix(os.Args[0], "trader-bot", 0)
 	// TelegramBot - bot name
 	TelegramBot   *string 
+	TelegramBotToken   *string 
 )
 
 func init() {
@@ -27,6 +28,7 @@ func init() {
 
 	// чтение данных из конфигурационного файла или переменных окружения
 	TelegramBot = cfg.String("telegram_bot", os.Getenv("TELEGRAM_BOT"), "Telegram bot name")
+	TelegramBotToken = cfg.String("telegram_bot_token", os.Getenv("TELEGRAM_BOT_TOKEN"), "Telegram bot token")
   
 	// s3Bucket := os.Getenv("S3_BUCKET")
 	// secretKey := os.Getenv("SECRET_KEY")
